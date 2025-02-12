@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scrolling */
+            background: url(love1.jpg);
+        }
+        #container {
+            position: relative;
+        }
+        h1{
+            color: red;
+            text-align: center;
+            text-shadow: 6px black;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #noButton {
+            position: absolute;
+            left: 50px; /* Initial position */
+            top: 50px;  /* Initial position */
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my velentine?</h1>
+    <div id="container">
+        <button onclick="sayYes()">Yes</button>
+        <button id="noButton" onclick="moveNoButton()">No</button>
+    </div>
+
+    <script>
+        function sayYes() {
+            alert("Yay! Mujhe pata tha tum haan kahogi! ❤️");
+        }
+
+        function moveNoButton() {
+            const noButton = document.getElementById('noButton');
+
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            // Ensuring the button stays within the viewport
+            noButton.style.left = Math.max(0, Math.min(randomX, maxX)) + 'px';
+            noButton.style.top = Math.max(0, Math.min(randomY, maxY)) + 'px';
+        }
+    </script>
+</body>
+</html>
