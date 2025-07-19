@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      font-family: 'Courier New', Courier, monospace;
+      background: black;
+      color: rgb(235, 235, 244);
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background-image: url(https://wallpaperaccess.com/full/5652027.png);
+    }
+
+
+
+    .hero-content {
+      font-weight: 450;
+      position: relative;
+      z-index: 2px;
+      text-align: center;
+      max-width: 720px;
+      padding: 1rem;
+      animation: fadeSlideIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+
+
+    .description {
+      font-size: 17px;
+      margin-bottom: 32px;
+      color: #e7e4eb;
+      line-height: 28px;
+      text-emphasis: initial;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 0 0.5rem;
+      background: rgba(160, 105, 105, 0.1);
+      border: 2px solid #7b90a7;
+      border-radius: 25px;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .buttons a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-button {
+      padding: 1px 2px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid #0D1B2A;
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      color: white;
+      font-weight: 1000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0 transparent;
+      display: inline-block;
+    }
+
+    .glass-button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .glass-button.alt {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #ccc;
+    }
+
+    .profile-container {
+      position: relative;
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1;
+    }
+
+    .profile:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    }
+
+    .badge {
+      position: absolute;
+      bottom: -10px;
+      right: 25%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 16px;
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
+      font-size: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .badge:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    }
+
+    .badge span {
+      display: block;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    #vanshu {
+      float: right;
+      padding: 1px 2px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid #6f9ac8;
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      color: white;
+      font-weight: 1000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0 transparent;
+      display: inline-block;
+    }
+
+    #vanshu:hover {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <p>Hello, I'm</p>
+      <a id="vanshu" class="glass-button alt">Contact:</a>
+      <h1>Vanshita Rathor</h1>
+      <p class="description">I design and build websites that tell stories. With experience in website development and a
+        passion for creating smooth, intuitive user experiences.</p>
+      <div class="buttons">
+        <a href="#portf olio" class="glass-button">View My Experience</a>
+        <a href="#about" class="glass-button alt">About Me</a>
+
+      </div>
+      <div class="profile-container">
+        <img
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fcf317fe-b1c8-426b-a2c7-4ca3468637e9/dh39a9a-45880260-ff05-4f42-9368-9f98cb71d2cb.jpg/v1/fill/w_1280,h_1661,q_75,strp/disneyland_girl_by_aivoodoo_dh39a9a-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY2MSIsInBhdGgiOiJcL2ZcL2ZjZjMxN2ZlLWIxYzgtNDI2Yi1hMmM3LTRjYTM0Njg2MzdlOVwvZGgzOWE5YS00NTg4MDI2MC1mZjA1LTRmNDItOTM2OC05Zjk4Y2I3MWQyY2IuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.GswrKY5RomIGvqoWnALfT0DrhX4p-sF-1lhbsYUoP3o"
+          class="profile" />
+        <div class="badge">Junior<br /><span>Web Developer</span></div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
